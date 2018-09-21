@@ -1,0 +1,278 @@
+/**I wrote a lot of this code a long time ago, and I may not have been great
+about documenting all scources, but much probably comes form stack overflow and
+other sources.*/
+.banner{
+  display:flex;
+  width:100%;
+  overflow:hidden;
+  margin-top: 10px;
+}
+.banner-side{
+  width:15%;
+  min-height: 20px;
+  background-color:black;
+  opacity: .4;
+  position: relative;
+  z-index: 5;
+}
+.banner-middle{
+  width: 70%;
+  min-height: 20px;
+  position: relative;
+}
+.banner-track{
+  width: 300%;
+  transition: left .3s ease;
+  position: relative;
+  z-index:0;
+  left:0;
+}
+.item{
+  margin-left: 5px;
+  margin-right:5px;
+  width: calc((100% / 3) - 10px);
+}
+.item-image{
+  width:inherit;
+}
+.shadow{
+  box-shadow: 2px 2px 2px grey;
+}
+.rounded{
+  border-radius: 3px;
+}
+.header{
+  height: 50px;
+  line-height: 55px;
+  font-size: 18pt;
+  margin:0;
+  margin-left: 20px;
+  position: relative;
+}
+.header-image{
+  height: 100%;
+}
+.header-line-height{
+  position: absolute;
+  top: 0px;
+
+}
+.smaller{
+  font-size: 12pt;
+}
+.navBar{
+  top:50px;
+  position: absolute;
+  z-index: 10;
+  background-color: #b71c1c;
+  width:100%;
+  margin: 0;
+  color: white;
+  font-family: 'Arial Verdana',Arial,Sans-serif;
+
+}
+.navElem{
+  vertical-align: top;
+  display:inline-block;
+  margin: 0;
+  font-size: 10pt;
+  padding: 0;
+  padding-left:1vw;
+  padding-right:1vw;
+  height:100%;
+  line-height: 40px;
+}
+.navElem:hover{
+  background-color: #7f0000;
+}
+.navBar a{
+  color: inherit;
+  text-decoration: none;
+}
+.right{
+  float: right;
+  font-weight: bold;
+}
+.last{
+  margin-right: 2vw;
+}
+.all-title{
+  display: block;
+  width: calc(100% - 20px);
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  bottom: 12%;
+  text-align:center;
+  z-index:7;
+  margin:0;
+  padding:0;
+  font-size:1.2rem;
+  margin:10px;
+  font-weight:bold;
+}
+#home{
+  font-size:14pt;
+  margin-right: 2vw;
+  margin-left: 2.5vw;
+}
+.full{
+  width:calc(100%);
+}
+.content{
+  margin-top: 40px;
+  z-index:auto;
+  clear: both;
+  height: calc(100vh - 65px);
+  padding:0;
+}
+.content-center{
+  width:100%;
+  overflow: hidden;
+}
+.inner-content{
+  width:100vw;
+  height: inherit;
+  background-color: white;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+.footer{
+  height:25px;
+  line-height: 25px;
+  text-align: center;
+  background-color: #1976d2;
+}
+#navButton{
+  display: none;
+}
+.button{
+  display: inline-block;
+  color:white;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: .7rem;
+  padding-left: .4rem;
+  padding-right: .4rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+  cursor: pointer;
+  margin:5px;
+  min-width: 40px;
+  text-align:center;
+  /*https://stackoverflow.com/questions/3087975/how-can-i-make-the-cursor-a-hand-when-a-user-hovers-over-a-list-item*/
+}
+.button:hover{
+  text-decoration: none;
+  background-color: darken()
+}
+.red{
+  background-color: #b71c1c;
+}
+.red:hover{
+  background-color: #7f0000;
+}
+.blue:hover{
+  background-color: #004ba0;
+}
+.blue{
+  background-color: #1976d2;
+}
+.noMargin{
+  margin: 0;
+  padding: 0;
+}
+.margin{
+  margin:0;
+}
+.modal-outer{
+  z-index: 200;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  /*https://stackoverflow.com/questions/10422949/css-background-opacity*/
+  background-color:rgba(0, 0, 0, 0.5);
+}
+.modal{
+  position:relative;
+  top:80px;
+  width: 512px;
+  max-width: calc(100% - 20px);
+  height: 500px;
+  max-height: calc(100% - 150px);
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  margin: auto;
+  overflow:hidden;
+}
+.modal-content{
+  width: calc(100% - 20px);
+  height: calc(100% - 35px);
+  overflow-y: auto;
+  margin:10px;
+  margin-top: 25px;
+  /*padding-right: 30px;*/
+}
+.close{
+  position:absolute;
+  top:0;
+  right:0;
+  margin-right: 2px;
+  margin-top: 2px;
+  cursor:pointer;
+  color: #585e68;
+}
+
+@media (max-width: 700px) {
+  .header{
+    font-size: 15pt;
+  }
+  .content{
+    position: relative;
+  }
+  #navButton{
+    display: inline-block;
+    float: right;
+    margin-right: 2vw;
+    width:auto;
+    font-size: 15pt;
+  }
+  .toggle{
+    display: block;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s;
+  }
+  .navElem{
+    text-align: center;
+    width: 100%;
+  }
+  .right{
+    float: none;
+    display: block;
+  }
+  #home{
+    display: inline-block;
+    width:auto;
+  }
+  .last{
+    margin-right: 0;
+  }
+  .smaller{
+    display: none;
+  }
+}
+p,h1{
+  padding-left: 20px;
+}
+body{
+  margin:0;
+  padding: 0;
+  font-family: "Helvetica";
+}
+.nav-icon{
+ position: relative;
+ top: 8px;
+}
